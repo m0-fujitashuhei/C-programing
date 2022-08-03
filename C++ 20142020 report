@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <random>
+using namespace std;
+
+    void sayWelcome(int times){
+        for (int i =0; i < times; ++i) {
+            cout << "Welcome to Shiga!\n";
+        }
+    }
+    
+    
+    class Shiga {
+        string spot;
+        int rank;
+     public:
+      void setSpot(const string& newSpot) {spot = newSpot;}
+      string getSpot() {return spot;}
+      void setrank(int newrank) {rank =newrank;}
+      int getrank() { return rank;}
+        
+    };
+    
+    int main() {
+        sayWelcome(1);
+        Shiga hikone ;
+        hikone.setSpot("彦根城 (歴史）");
+        hikone.setrank (1 );
+        Shiga otsu;
+        otsu.setSpot("琵琶湖バレイ(風景）");
+        otsu.setrank (2 );
+        Shiga oumihachimann;
+        oumihachimann.setSpot("ラコリーナ (カフェ）");
+        oumihachimann.setrank(3 );
+        Shiga kouga;
+        kouga.setSpot("陶芸の森 (文化）");
+        kouga.setrank(4 );
+        Shiga takasima;
+        takasima.setSpot("NOTA_SHOP (アート）");
+        takasima.setrank(5 );
+        
+        cout << "観光地:" << hikone.getSpot() << " おすすめ度:" << hikone.getrank();
+        cout << ",観光地:" << otsu.getSpot() << " おすすめ度:" << otsu.getrank() ;
+        cout << ",観光地:" << oumihachimann.getSpot() << " おすすめ度:" << oumihachimann.getrank() ;
+        cout << ",観光地:" << kouga.getSpot() << " おすすめ度:" << kouga.getrank() ;
+        cout << ",観光地:" << takasima.getSpot() << " おすすめ度:" << takasima.getrank() << endl;
+    
+    
+    
+        std::vector<int> v{ 2, 3, 5, 1, 4};
+        
+        auto it = v.begin();
+        std::cout << *it <<  otsu.getSpot() << std::endl;
+        
+        ++it;
+        std::cout << *it <<oumihachimann.getSpot() <<std::endl;
+        
+        it = it + 3;
+        std::cout <<*it << takasima.getSpot() << std::endl;
+        
+        random_device engine;
+        uniform_int_distribution<unsigned> v1(1, 5);
+        for (int i = 0; i < 5; ++i) {
+            cout << v1(engine) << "→";
+        }
+        cout << endl;
+    } 
+        
